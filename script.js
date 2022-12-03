@@ -66,23 +66,6 @@ const brands = [
   "zorah biocosmetiques",
 ];
 
-const product_category = [
-  "powder",
-  "cream",
-  "pencil",
-  "liquid",
-  "gel",
-  "palette",
-  "concealer",
-  "contour",
-  "bb cc",
-  "mineral",
-  "highlighter",
-  "lipstick",
-  "lipgloss",
-  "lip stain",
-];
-
 const input = document.getElementById("search");
 const display = document.querySelector("#info");
 
@@ -94,18 +77,6 @@ input.addEventListener("keyup", function (e) {
       <a href="http://makeup-api.herokuapp.com/api/v1/products?brand=${brand}">${brand}</a>\n`;
     } else {
       display.innerText = "";
-    }
-  });
-});
-
-input.addEventListener("keyup", function (e) {
-  const term = e.target.value.toLowerCase();
-  product_category.forEach((category) => {
-    if (category.toLowerCase().indexOf(term) != -1) {
-      display.innerHTML += `
-      <a href="http://makeup-api.herokuapp.com/api/v1/products?product_type=${category}">${category}</a>\n`;
-    } else {
-      display.innerHTML = "";
     }
   });
 });
